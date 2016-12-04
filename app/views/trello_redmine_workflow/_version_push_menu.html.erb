@@ -1,0 +1,7 @@
+<% if @project.module_enabled?('trello_redmine_workflow') %>
+	<% if @version.card.nil? %>
+		<%= link_to "Send to Trello", version_push_path(version_id: @version.id), { style: 'font-weight: bold;' } %>
+	<% else %>
+		<span>Synchronized with trello</span>
+	<% end %>
+<% end %>

@@ -1,0 +1,19 @@
+<p>
+  <label>App key</label>
+  <%= text_field_tag 'settings[app_key]', Setting.plugin_trello_redmine_workflow[:app_key] %>
+</p>
+
+<p>
+  <label>User Token</label>
+  <%= text_field_tag 'settings[user_token]', Setting.plugin_trello_redmine_workflow[:user_token] %>
+</p>
+
+<p>
+  <label>Version Board ID</label>
+  <%= text_field_tag 'settings[version_board_id]', Setting.plugin_trello_redmine_workflow[:version_board_id] %>
+</p>
+
+<p>
+  <label>Redmine Host</label>
+  <%= text_field_tag 'settings[redmine_host]', Setting.plugin_trello_redmine_workflow[:redmine_host] || request.host %>
+</p>
