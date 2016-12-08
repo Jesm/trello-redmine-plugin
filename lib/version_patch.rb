@@ -20,10 +20,17 @@ module VersionPatch
   end
 
   module InstanceMethods
+
+    def disable_push!
+      @disable_push = true
+    end
+
     protected
 
       def push_to_trello
-        card.push! if project.module_enabled?('trello_redmine_workflow') && !card.nil?
+        if project.module_enabled?('trello_redmine_workflow') && !card.nil? && (changed & ['name', 'effective_date']).any? && !@disable_push
+          card.push!
+        end
       end
 
   end
