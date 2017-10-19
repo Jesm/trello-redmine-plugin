@@ -1,3 +1,3 @@
-= teste
+= trello-redmine-plugin
 
-Description goes here
+Simple unfinished plugin made for redmine. The objective is to sync redmine versions with a trello board.
